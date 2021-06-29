@@ -14,21 +14,24 @@
     	{
         "accessories": [
           {
-            "accessory": "domoticzmqttgaragedoor",
+            "accessory": "duralmqttgaragedoor",
             "name": "what ever you want",
             "url": "mqtt://xxx.xxx.xxx.xxx",
             "username": "username",
             "password": "password",
-            "switchid": "domoticz switch idx",
-            "statusid": "domoticz open/close sensor idx (mandatory)",
+            "switchid": "dural switch idx",
+            "statusid": "dural open/close sensor idx (mandatory)",
+            "statetopic": "",
+            "topic": "",
             "topics": {
-              "openValue":    "On",
-              "closedValue":	"Off",
-              "openStatusCmd": "On",
-              "closeStatusCmd": "Off"
+              "openValue":    "1",
+              "closedValue":	"0",
+              "openStatusCmd": "1",
+              "closeStatusCmd": "0"
             },
-            "doorRunInSeconds": "20"
+            "doorRunInSeconds": "40"
           }
+        ]
     	}
     ]
 }
