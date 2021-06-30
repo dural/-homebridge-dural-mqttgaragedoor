@@ -3,7 +3,7 @@
 // Remember to add accessory to config.json. Example:
 // "accessories": [
 //     {
-//            	"accessory": "domoticzmqttgaragedoor",
+//            	"accessory": "duralmqttgaragedoor",
 //            	"name": "NAME OF THE GARAGE DOOR OPENER",
 //            	"url": "URL OF THE BROKER",
 //  	      	"username": "USERNAME OF THE BROKER",
@@ -46,7 +46,7 @@ function clone(object, extend) {
   return cloned;
 };
 
-function DomoticzMqttGarageDoorAccessory(log, config) {
+function DuralMqttGarageDoorAccessory(log, config) {
   	this.log          	= log;
   	this.name 		= config["name"];
   	this.url 		= config["url"];
@@ -103,7 +103,7 @@ function DomoticzMqttGarageDoorAccessory(log, config) {
     	this.infoService
       	   .setCharacteristic(Characteristic.Manufacturer, "Opensource Community and dural")
            .setCharacteristic(Characteristic.Model, "Homebridge dural MQTT GarageDoor")
-	   .setCharacteristic(Characteristic.FirmwareRevision,"1.0.3")
+	   .setCharacteristic(Characteristic.FirmwareRevision,"1.0.5")
            .setCharacteristic(Characteristic.SerialNumber, "20210629");
 
 
@@ -209,10 +209,10 @@ module.exports = function(homebridge) {
   	Characteristic = homebridge.hap.Characteristic;
 	DoorState = homebridge.hap.Characteristic.CurrentDoorState;
 
-  	homebridge.registerAccessory("homebridge-domoticz-mqttgaragedoor", "domoticzmqttgaragedoor", DomoticzMqttGarageDoorAccessory);
+  	homebridge.registerAccessory("homebridge-dural-mqttgaragedoor", "duralmqttgaragedoor", DuralMqttGarageDoorAccessory);
 }
 
-DomoticzMqttGarageDoorAccessory.prototype = {
+DuralMqttGarageDoorAccessory.prototype = {
 
 	doorStateReadable : function( doorState ) {
 		switch (doorState) {
